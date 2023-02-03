@@ -36,6 +36,15 @@ section {
   font-size: 14px;
   font-weight: 600;
 }
+.footer {
+  /* flex-direction: column; */
+}
+.download {
+  margin: 0;
+  padding: 0px;
+  font-size: 10px;
+  border-radius: 50px;
+}
 @media screen and (min-width: 992px) {
   .user h1 {
     top: 243px;
