@@ -1,7 +1,6 @@
 import React from 'react';
 
-const SelectCountry = ({ countries, setCategory, category }) => {
-  console.log(category);
+const SelectCountry = ({ countries, setCategory }) => {
   return (
     <select
       name="country"
