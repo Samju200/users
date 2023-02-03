@@ -11,7 +11,7 @@ import SelectCountry from './component/SelectCountry';
 import CircleIcon from '@mui/icons-material/Circle';
 
 const url = 'https://randomuser.me/api/?results=15';
-const countryUrl = 'https://countriesnow.space/api/v0.1/countries/flag/unicode';
+
 function App() {
   const [users, setUsers] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -25,6 +25,7 @@ function App() {
   const [showCategory, setShowCategory] = useState(false);
   const [postsPerPage] = useState(3);
   const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState('');
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -41,8 +42,8 @@ function App() {
       setLoading(false);
       setError(false);
       let countrySort = fetchUser.map((user) => user.location.country);
+      countrySort = ['Nigeria', ...new Set(countrySort)];
       setCountries(countrySort);
-
       const search = fetchUser.filter((user) => {
         return (
           user.name.first.toLowerCase().includes(inputValue.toLowerCase()) ||
@@ -51,16 +52,6 @@ function App() {
       });
 
       setUsers(search);
-      const countrySearch = fetchUser.filter((user) => {
-        if (category) {
-          return user.location.country
-            .toLowerCase()
-            .includes(category.toLowerCase());
-        } else {
-          setUsers(users);
-        }
-      });
-      setUsers(countrySearch);
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -78,7 +69,7 @@ function App() {
     setUsers(genderUser);
 
     setActiveGenderList(`${gender} User`);
-    //  setButtonGender(genderUser)
+
     if (gender === 'all') {
       setUsers(buttonGender);
       setActiveGenderList('All Users');
@@ -182,6 +173,8 @@ function App() {
             countries={countries}
             category={category}
             setCategory={setCategory}
+            setCountry={setCountry}
+            country={country}
           />
           <button className={showCategory ? 'switch-show' : 'switch'}>
             <CircleIcon

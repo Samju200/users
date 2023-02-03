@@ -86,3 +86,10 @@
 .user-btn-btn {
   color: #fff !important;
 }
+
+@media screen and (max-width: 600px) {
+  .user-details {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

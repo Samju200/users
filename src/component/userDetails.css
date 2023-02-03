@@ -67,3 +67,8 @@
   font-size: 10px;
   margin: 20px 0;
 }
+@media screen and (max-width: 600px) {
+  .more-user-details {
+    flex-direction: column;
+  }
+}
