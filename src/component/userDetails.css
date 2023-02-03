@@ -22,8 +22,8 @@
 }
 
 .user-image {
-  height: 250px !important;
-  width: 250px !important;
+  height: 180px !important;
+  width: 180px !important;
   border: 5px solid #30bbb5;
   border-radius: 100px;
   margin-right: 15px;
@@ -31,7 +31,7 @@
 
 .user-names {
   margin-bottom: 15px;
-  font-size: 36px;
+  font-size: 24px;
 }
 
 .user-names > span {

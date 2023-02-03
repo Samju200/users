@@ -20,7 +20,7 @@
   color: white;
   margin-bottom: 15px;
   transition: 700ms;
-  width: 150px;
+  width: 100px;
 }
 .users-btn:focus,
 .user-btn-female:focus,
@@ -44,7 +44,7 @@
   color: white;
   margin-bottom: 15px;
   transition: 700ms;
-  width: 150px;
+  width: 100px;
 }
 .user-btn-female {
   background: #7946c1;
@@ -55,11 +55,11 @@
   color: white;
   margin-bottom: 15px;
   transition: 700ms;
-  width: 150px;
+  width: 100px;
 }
 .icon {
-  height: 40px !important;
-  width: 40px !important;
+  height: 20px !important;
+  width: 20px !important;
 }
 @media screen and (max-width: 600px) {
   .users-button {
@@ -68,6 +68,6 @@
   .user-btn-female,
   .user-btn-male,
   .users-btn {
-    width: 200px;
+    width: 100px;
   }
 }

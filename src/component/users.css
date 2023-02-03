@@ -20,9 +20,9 @@
 }
 
 .user-picture {
-  width: 150px !important;
-  height: 150px !important;
-  border: 10px solid #30bbb5;
+  width: 100px !important;
+  height: 100px !important;
+  border: 5px solid #30bbb5;
   /* border-radius: 100%; */
 }
 .user-info {
@@ -31,7 +31,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 10px;
   flex: 1;
   /* padding-right: 20px; */
   /* width: 400px; */
@@ -43,7 +43,7 @@
   color: #262a41;
   text-align: left;
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 25px;
 }
 .user-info h5 {
   display: flex;
@@ -54,7 +54,7 @@
   opacity: 0.69;
   font-style: italic;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
 }
 .user-contact {
   display: flex;
@@ -69,11 +69,11 @@
   opacity: 0.52;
   font-weight: 300;
   text-align: left;
-  font-size: 20px;
+  font-size: 12px;
 }
 .user-btn {
   /* border: 1px solid #000; */
-  width: 70px;
+  width: 50px;
   height: 50px;
   background: #30bbb5 0% 0% no-repeat padding-box;
   box-shadow: 2px 15px 30px #30bbb574;
@@ -82,4 +82,7 @@
   align-items: center;
   justify-items: center;
   justify-content: center;
+}
+.user-btn-btn {
+  color: #fff !important;
 }

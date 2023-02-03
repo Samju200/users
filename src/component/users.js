@@ -42,7 +42,7 @@ const Users = ({
               <FiPhoneCall /> {phone}
             </p>
             <div className="user-btn">
-              <ArrowForwardIcon />
+              <ArrowForwardIcon className="user-btn-btn" />
             </div>
           </div>
         </div>

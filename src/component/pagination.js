@@ -21,28 +21,16 @@ const Pagination = ({
           prevPage();
         }}
       >
-        <ArrowBackIosIcon className="page-btn" />
+        <ArrowBackIosIcon className="page-btn-back" />
       </button>
-      {/* {pageNumbers.map((number) => {
-          return (
-            <button
-              key={number}
-              className="page-item"
-              onClick={() => {
-                paginate(number);
-              }}
-            >
-              {number}
-            </button>
-          );
-        })} */}
+
       <button
         className="prev-btn"
         onClick={() => {
           nextPage();
         }}
       >
-        <ArrowForwardIosIcon className="page-btn" />
+        <ArrowForwardIosIcon className="page-btn-next" />
       </button>
     </div>
   );

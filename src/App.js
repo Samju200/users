@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Search from './component/search';
 import Button from './component/button';
@@ -6,27 +6,20 @@ import SearchCountry from './component/searchCountry';
 import UserList from './component/userList';
 import Pagination from './component/pagination';
 import { BiCloudDownload } from 'react-icons/bi';
-import { IoIosSwitch } from 'react-icons/io';
 import { CSVLink } from 'react-csv';
 import SelectCountry from './component/SelectCountry';
 import CircleIcon from '@mui/icons-material/Circle';
 
-// import './user.css';
-
 const url = 'https://randomuser.me/api/?results=15';
-const countryUrl = 'https://countriesnow.space/api/v0.1/countries/flag/unicode';
 function App() {
-  const showRef = useRef(null);
   const [users, setUsers] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [setLoading] = useState(true);
+  const [setError] = useState(false);
   const [buttonGender, setButtonGender] = useState([]);
   const [genders, setGenders] = useState([]);
   const [activeGenderList, setActiveGenderList] = useState('All Users');
   const [category, setCategory] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [country, setCountry] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [showCategory, setShowCategory] = useState(false);
   const [postsPerPage] = useState(3);
@@ -40,7 +33,7 @@ function App() {
       const fetchUser = result.results;
       setUsers(fetchUser);
       setButtonGender(fetchUser);
-      // setSearchUser(fetchUser[0])
+
       let buttonSort = fetchUser.map((user) => user.gender);
       buttonSort = ['all', ...new Set(buttonSort)];
       setGenders(buttonSort);
@@ -50,7 +43,6 @@ function App() {
       setCountries(countrySort);
 
       const search = fetchUser.filter((user) => {
-        console.log(user.name.first);
         return (
           user.name.first.toLowerCase().includes(inputValue.toLowerCase()) ||
           user.name.last.toLowerCase().includes(inputValue.toLowerCase())
@@ -58,13 +50,13 @@ function App() {
       });
 
       setUsers(search);
-      const countrySearch = fetchUser.filter((user) => {
-        console.log(user.location.country);
-        return user.location.country
-          .toLowerCase()
-          .includes(category.toLowerCase());
-      });
-      setUsers(countrySearch);
+      // const countrySearch = fetchUser.filter((user) => {
+      //   return user.location.country
+      //     .toLowerCase()
+      //     .includes(category.toLowerCase());
+      // });
+
+      // console.log(countrySearch);
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -75,13 +67,8 @@ function App() {
 
   useEffect(() => {
     fetchUsers();
-  }, [inputValue, category]);
-  const handleShowCountry = () => {
-    setShowCategory(!showCategory);
-    if (showCategory) {
-      showRef.current.style.left = '0px';
-    }
-  };
+  }, [inputValue]);
+
   const fitterButton = (gender) => {
     const genderUser = buttonGender.filter((user) => user.gender === gender);
     setUsers(genderUser);

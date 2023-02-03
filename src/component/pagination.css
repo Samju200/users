@@ -22,7 +22,6 @@
 .page-btn {
   width: 20px !important;
   height: 20px !important;
-  color: #fff;
 }
 .pagination > button {
   width: 50px;
@@ -31,8 +30,11 @@
   outline: none;
   background-color: rgb(233, 243, 243);
 }
-.page-btn:nth-child(1) {
-  color: #000;
+.page-btn-back {
+  color: #000 !important;
+}
+.page-btn-next {
+  color: #fff !important;
 }
 .pagination > button:nth-child(2) {
   background-color: #323874;
