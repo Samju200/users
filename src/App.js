@@ -11,11 +11,12 @@ import SelectCountry from './component/SelectCountry';
 import CircleIcon from '@mui/icons-material/Circle';
 
 const url = 'https://randomuser.me/api/?results=15';
+const countryUrl = 'https://countriesnow.space/api/v0.1/countries/flag/unicode';
 function App() {
   const [users, setUsers] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [setLoading] = useState(true);
-  const [setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [buttonGender, setButtonGender] = useState([]);
   const [genders, setGenders] = useState([]);
   const [activeGenderList, setActiveGenderList] = useState('All Users');
@@ -50,13 +51,16 @@ function App() {
       });
 
       setUsers(search);
-      // const countrySearch = fetchUser.filter((user) => {
-      //   return user.location.country
-      //     .toLowerCase()
-      //     .includes(category.toLowerCase());
-      // });
-
-      // console.log(countrySearch);
+      const countrySearch = fetchUser.filter((user) => {
+        if (category) {
+          return user.location.country
+            .toLowerCase()
+            .includes(category.toLowerCase());
+        } else {
+          setUsers(users);
+        }
+      });
+      setUsers(countrySearch);
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -67,7 +71,7 @@ function App() {
 
   useEffect(() => {
     fetchUsers();
-  }, [inputValue]);
+  }, [inputValue, category]);
 
   const fitterButton = (gender) => {
     const genderUser = buttonGender.filter((user) => user.gender === gender);
