@@ -32,3 +32,8 @@
   background-color: #323874;
   margin-left: 5px;
 }
+@media screen and (max-width: 600px) {
+  .pagination {
+    display: block;
+  }
+}
