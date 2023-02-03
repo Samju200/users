@@ -17,7 +17,6 @@ const Users = ({
   phone,
   image,
   handleClick,
-  setShowCategory,
   showCategory,
 }) => {
   return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import './selectCountry.css';
 
 const SelectCountry = ({ countries, setCategory, category }) => {
   console.log(category);

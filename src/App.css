@@ -36,11 +36,9 @@ section {
   font-size: 14px;
   font-weight: 600;
 }
-.footer {
-  /* flex-direction: column; */
-}
+
 .download {
-  margin: 0;
+  margin: auto;
   padding: 0px;
   font-size: 10px;
   border-radius: 50px;
